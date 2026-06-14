@@ -152,15 +152,8 @@ document.addEventListener('DOMContentLoaded', () => {
     cards.forEach(card => {
         if (card.classList.contains('projects-card')) {
             card.addEventListener('click', () => {
-                const container = document.querySelector('.container');
-                const projectsContent = document.querySelector('.projects-content');
-                
-                // Prepare the projects content to match the current container height
-                projectsContent.style.minHeight = container.offsetHeight + 'px';
-                
-                // Smooth transition
                 requestAnimationFrame(() => {
-                    container.classList.add('show-projects');
+                    document.querySelector('.container').classList.add('show-projects');
                 });
             });
         } else if (!card.querySelector('.link-title').textContent.includes('Resume')) {
@@ -183,17 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const backButton = document.querySelector('.back-button');
     if (backButton) {
         backButton.addEventListener('click', () => {
-            const container = document.querySelector('.container');
-            const links = document.querySelectorAll('.links');
-            
-            // First make links visible again
-            links.forEach(link => {
-                link.style.visibility = 'visible';
-                link.style.opacity = '1';
-            });
-            
-            // Then remove the class to transition back
-            container.classList.remove('show-projects');
+            document.querySelector('.container').classList.remove('show-projects');
         });
     }
 });

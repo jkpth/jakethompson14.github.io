@@ -665,17 +665,14 @@ input, textarea {
 .container.show-projects .projects-content {
     display: block;
     animation: fadeIn 0.3s ease forwards;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    padding: 1.25rem;
 }
 
 .container.show-projects .links {
-    animation: fadeOut 0.3s ease forwards;
-    pointer-events: none;
-    position: relative;
+    display: none;
+}
+
+.container.show-projects > .header-content {
+    display: none;
 }
 
 @keyframes fadeIn {
